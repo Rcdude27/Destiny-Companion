@@ -29,7 +29,7 @@ namespace DestinyCompanion.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsDescriptionAttribute("This is the boolean for if the program is being opened for the first time")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool FirstRun {
             get {
                 return ((bool)(this["FirstRun"]));

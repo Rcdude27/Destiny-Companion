@@ -105,7 +105,7 @@
             this.Controls.Add(this.HunterRadio);
             this.Controls.Add(this.WarlockRadio);
             this.Controls.Add(this.TitanRadio);
-        
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectClass";
             this.Text = "Class Selection";
             this.Load += new System.EventHandler(this.SelectClass_Load);

@@ -141,6 +141,7 @@
             this.Controls.Add(this.CharSlotLabel3);
             this.Controls.Add(this.CharSlotLabel2);
             this.Controls.Add(this.CharSlotLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteChar";
             this.Text = "Delete Character";
             this.ResumeLayout(false);

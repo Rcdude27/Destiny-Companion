@@ -30,22 +30,29 @@ namespace DestinyCompanion
         public bool MFChar1Found = false;
         public bool MFChar2Found = false;
         public bool MFChar3Found = false;
+
+        public List<string> Char1Content = new List<string>();
+        public List<string> Char2Content = new List<string>();
+        public List<string> Char3Content = new List<string>();
+
         #endregion
 
 
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
             var sc = new SelectClass();
             var dc = new DeleteChar();
 
             MFChar1Path = sc.Char1Path;
             MFChar2Path = sc.Char2Path;
             MFChar3Path = sc.Char3Path;
-        }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
             //Properties.Settings.Default["FirstRun"] = true;
 
             #region FirstRun
@@ -219,6 +226,45 @@ namespace DestinyCompanion
                     MFChar3Found = false;
                 }
                 #endregion
+                #region Read Char Info
+                if (MFChar1Found == true)
+                {
+                    List<string> Content = new List<string>();
+                    using (StreamReader sr = new StreamReader(MFChar1Path))
+                    {
+                        while (!sr.EndOfStream)
+                        {
+                            Content.Add(sr.ReadLine()); 
+                        }
+                    }
+                    Content = Char1Content;
+
+                }
+                if (MFChar2Found == true)
+                {
+                    List<string> Content = new List<string>();
+                    using (StreamReader sr = new StreamReader(MFChar1Path))
+                    {
+                        while (!sr.EndOfStream)
+                        {
+                            Content.Add(sr.ReadLine());
+                        }
+                    }
+                    Content = Char2Content;
+                }
+                if (MFChar3Found == true)
+                {
+                    List<string> Content = new List<string>();
+                    using (StreamReader sr = new StreamReader(MFChar1Path))
+                    {
+                        while (!sr.EndOfStream)
+                        {
+                            Content.Add(sr.ReadLine());
+                        }
+                    }
+                    Content = Char3Content;
+                }
+                #endregion
             }
             #endregion
 
@@ -242,6 +288,13 @@ namespace DestinyCompanion
             var dc = new DeleteChar();
             dc.ShowDialog();
 
+        }
+        #endregion
+        #region Edit Char
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ec = new EditChar();
+            ec.ShowDialog();
         }
         #endregion
     }

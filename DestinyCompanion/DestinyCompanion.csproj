@@ -55,6 +55,12 @@
     <Compile Include="DeleteChar.Designer.cs">
       <DependentUpon>DeleteChar.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditChar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditChar.Designer.cs">
+      <DependentUpon>EditChar.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="Settings.cs" />
     <EmbeddedResource Include="DeleteChar.resx">
       <DependentUpon>DeleteChar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditChar.resx">
+      <DependentUpon>EditChar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -102,9 +111,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Destiny.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

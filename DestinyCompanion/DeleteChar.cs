@@ -41,113 +41,115 @@ namespace DestinyCompanion
 
 
 
-
-            #region Find which slots are empty/full
-            try
+            if ((bool)Properties.Settings.Default["FirstRun"] == false)
             {
-
-                using (StreamReader sr = new StreamReader(DCChar1Path))
+                #region Find which slots are empty/full
+                try
                 {
 
-                    string LineFound = sr.ReadLine();
-                    if (LineFound != "")
-                    {
-                        DCChar1Found = true;
-                    }
-
-
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                DCChar1Found = false;
-            }
-            try
-            {
-
-                using (StreamReader sr = new StreamReader(DCChar2Path))
-                {
-                    string LineFound = sr.ReadLine();
-                    if (LineFound != "")
-                    {
-                        DCChar2Found = true;
-                    }
-                }
-            }
-            catch (FileNotFoundException)
-            {
-
-                DCChar2Found = false;
-            }
-            try
-            {
-                using (StreamReader sr = new StreamReader(DCChar3Path))
-                {
-                    string LineFound = sr.ReadLine();
-                    if (LineFound != "")
+                    using (StreamReader sr = new StreamReader(DCChar1Path))
                     {
 
-                        DCChar3Found = true;
+                        string LineFound = sr.ReadLine();
+                        if (LineFound != "")
+                        {
+                            DCChar1Found = true;
+                        }
+
+
                     }
-
                 }
-            }
-            catch (FileNotFoundException)
-            {
-                DCChar3Found = false;
-            }
-            #endregion
-            #region Read Char Names
-            try
-            {
-                using (StreamReader sr = new StreamReader(DCChar1Path))
+                catch (FileNotFoundException)
                 {
-                    CharName1 = sr.ReadLine();
+                    DCChar1Found = false;
                 }
-            }
-            catch (FileNotFoundException)
-            {
-                DCChar1Found = false;
-            }
-            try
-            {
-                using (StreamReader sr = new StreamReader(DCChar2Path))
+                try
                 {
-                    CharName2 = sr.ReadLine();
+
+                    using (StreamReader sr = new StreamReader(DCChar2Path))
+                    {
+                        string LineFound = sr.ReadLine();
+                        if (LineFound != "")
+                        {
+                            DCChar2Found = true;
+                        }
+                    }
                 }
-            }
-            catch (FileNotFoundException)
-            {
-                DCChar2Found = false;
-            }
-            try
-            {
-                using (StreamReader sr = new StreamReader(DCChar3Path))
+                catch (FileNotFoundException)
                 {
-                    CharName3 = sr.ReadLine();
+
+                    DCChar2Found = false;
                 }
-            }
-            catch (FileNotFoundException)
-            {
-                DCChar3Found = false;
-            }
+                try
+                {
+                    using (StreamReader sr = new StreamReader(DCChar3Path))
+                    {
+                        string LineFound = sr.ReadLine();
+                        if (LineFound != "")
+                        {
 
-            #endregion
-            #region Logic for the label text
-            if (DCChar1Found == true)
-            {
-                CharLabel1.Text = CharName1;
-            }
-            if (DCChar2Found == true)
-            {
-                CharLabel2.Text = CharName2;
-            }
-            if (DCChar3Found == true)
-            {
-                CharLabel3.Text = CharName3;
-            }
-            #endregion
+                            DCChar3Found = true;
+                        }
 
+                    }
+                }
+                catch (FileNotFoundException)
+                {
+                    DCChar3Found = false;
+                }
+                #endregion
+                #region Read Char Names
+                try
+                {
+                    using (StreamReader sr = new StreamReader(DCChar1Path))
+                    {
+                        CharName1 = sr.ReadLine();
+                    }
+                }
+                catch (FileNotFoundException)
+                {
+                    DCChar1Found = false;
+                }
+                try
+                {
+                    using (StreamReader sr = new StreamReader(DCChar2Path))
+                    {
+                        CharName2 = sr.ReadLine();
+                    }
+                }
+                catch (FileNotFoundException)
+                {
+                    DCChar2Found = false;
+                }
+                try
+                {
+                    using (StreamReader sr = new StreamReader(DCChar3Path))
+                    {
+                        CharName3 = sr.ReadLine();
+                    }
+                }
+                catch (FileNotFoundException)
+                {
+                    DCChar3Found = false;
+                }
+
+                #endregion
+                #region Logic for the label text
+                if (DCChar1Found == true)
+                {
+                    CharLabel1.Text = CharName1;
+                }
+                if (DCChar2Found == true)
+                {
+                    CharLabel2.Text = CharName2;
+                }
+                if (DCChar3Found == true)
+                {
+                    CharLabel3.Text = CharName3;
+                }
+                #endregion
+
+            }
         }
         #region Delete Character 1
         private void DeleteSlot1_Click(object sender, EventArgs e)

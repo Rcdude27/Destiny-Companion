@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="FirstRun" Description="This is the boolean for if the program is being opened for the first time" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
