@@ -267,8 +267,6 @@ namespace DestinyCompanion
                 #endregion
             }
             #endregion
-
-
         }
         #region New Char
         private void newToolStripMenuItem_Click(object sender, EventArgs e) //Character --> New
